@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        test = readFile file: "${env.WORKSPACE}/params.json"
+        test = "a"
     }
 
     stages {
@@ -10,7 +10,7 @@ pipeline {
         stage('Welcome to master'){
             steps{
                 echo 'Start Program'
-                echo '${env.test}'
+                echo '${test}'
             }
         }
 
