@@ -1,11 +1,16 @@
 pipeline {
     agent any
 
+    environment {
+        test = readJSON file: "${env.WORKSPACE}\\params.json"
+    }
+
+
     stages {
         
         stage('Welcome to master'){
             steps{
-                echo 'Start Program 3'
+                echo 'Start Program'
             }
         }
 
