@@ -9,15 +9,15 @@ pipeline {
         
         stage('Welcome to master'){
             steps{
-                echo 'Start Program 1'
+                echo 'Start Program'
             }
         }
 
         stage('Read JSON file'){
             steps{
-                sh 'echo "Data : ${data}"'
-                sh 'echo "Name : ${data[name]}"'
-                sh 'echo "Age : ${data[age]}"'
+                sh 'echo ${data}'
+                sh 'echo ${data.name}'
+                sh 'echo ${data.age}'
             }
         }
 
