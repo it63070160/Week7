@@ -15,9 +15,10 @@ pipeline {
 
         stage('Read JSON file'){
             steps{
-                sh 'echo ${data}'
-                sh 'echo ${data.name}'
-                sh 'echo ${data.age}'
+                script{
+                    name = "${data.name}"
+                    echo name
+                }
             }
         }
 
