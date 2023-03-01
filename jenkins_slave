@@ -16,7 +16,7 @@ pipeline {
 
         stage("Get Parameters & Run Python"){
             steps{
-                echo 'Name : ${params.NAME} | Age : ${params.Ages}'
+                echo "Name : ${params.NAME} | Age : ${params.Ages}"
             }
         }
     }
