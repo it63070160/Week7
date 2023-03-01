@@ -17,7 +17,7 @@ pipeline {
         stage("Get Parameters & Run Python"){
             steps{
                 echo "Name : ${params.NAME} | Age : ${params.Ages}"
-                python myscript.py ${params.NAME} --age ${params.Ages}
+                sh python myscript.py ${params.NAME} --age ${params.Ages}
             }
         }
     }
