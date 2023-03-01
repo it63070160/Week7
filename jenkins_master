@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        test = readFile "${env.WORKSPACE}/params.txt"
+        test = "test"
     }
 
     stages {
