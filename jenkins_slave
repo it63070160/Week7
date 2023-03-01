@@ -13,10 +13,10 @@ pipeline {
                 echo 'Start Program'
             }
         }
-        stage('slave execute'){
+        <!-- stage('slave execute'){
             steps{
                 python myscript.py ${params.NAME} --age ${params.Ages}
             }
-        }
+        } -->
     }
 }
