@@ -10,13 +10,8 @@ pipeline {
         
         stage('Welcome to slave'){
             steps{
-                echo 'Start Program'
+                echo 'Start Slave Program'
             }
         }
-        <!-- stage('slave execute'){
-            steps{
-                python myscript.py ${params.NAME} --age ${params.Ages}
-            }
-        } -->
     }
 }
