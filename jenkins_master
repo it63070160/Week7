@@ -10,7 +10,7 @@ pipeline {
         stage('Welcome to master'){
             steps{
                 echo 'Start Program'
-                echo '${test}'
+                sh 'echo "${test}"'
             }
         }
 
