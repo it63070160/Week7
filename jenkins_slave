@@ -1,1 +1,13 @@
 # your Home work
+pipeline {
+    agent any
+
+    stages {
+        
+        stage('Welcome to master'){
+            steps{
+                echo 'Start Program'
+            }
+        }
+    }
+}
