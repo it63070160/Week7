@@ -1,23 +1,30 @@
 pipeline {
     agent any
 
+    environment {
+        data = readJSON file: "${env.WORKSPACE}/params.json"
+    }
+
     stages {
         
         stage('Welcome to master'){
             steps{
                 echo 'Start Program 1'
-                script {
-                    def envname = readJSON file: "${env.WORKSPACE}/params.json"
-                    element1 = "${envname.name}"
-                    echo element1
-                }
+            }
+        }
+
+        stage('Read JSON file'){
+            steps{
+                echo 'Data : ${data}'
+                echo 'Name : ${data.name}'
+                echo 'Age : ${data.age}'
             }
         }
 
         stage('Tigger the Slave Jobs') {
             steps {
                 echo 'Start Trigger to send name and age to slave'
-                build job: 'slave', parameters: [string(name: 'NAME', value: 'Alice'), string(name: 'Ages', value: '21')]
+                build job: 'slave', parameters: [string(name: 'NAME', value: '${data.name}'), string(name: 'Ages', value: '${data.age}')]
             }
         }
     }
