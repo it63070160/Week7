@@ -2,10 +2,8 @@ pipeline {
     agent any
 
     environment {
-        def test1 = readJSON file: "${env.WORKSPACE}\\params.json"
+        def test = readJSON file: "${env.WORKSPACE}\\params.json"
     }
-    
-    def test2 = readJSON file: "${env.WORKSPACE}\\Projects.json"
 
     stages {
         
