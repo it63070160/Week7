@@ -2,18 +2,15 @@ pipeline {
     agent any
 
     environment {
-        test = "a"
+        test = readFile "${env.WORKSPACE}/params.json"
     }
 
     stages {
         
         stage('Welcome to master'){
             steps{
-                script {
-                    def props = readFile "${env.WORKSPACE}/params.json"
-                    echo '${props}'
-                }
                 echo 'Start Program'
+                echo '${test}'
             }
         }
 
