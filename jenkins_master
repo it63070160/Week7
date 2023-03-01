@@ -1,16 +1,16 @@
 pipeline {
     agent any
 
-    environment {
-        test = readJSON file: "${env.WORKSPACE}/params.json"
-    }
-
     stages {
         
         stage('Welcome to master'){
             steps{
                 echo 'Start Program'
-                sh 'echo "${test}"'
+                script {
+                    def envname = readJSON file: "${env.WORKSPACE}/params.json"
+                    element1 = "${envname.name}"
+                    echo element1
+                }
             }
         }
 
