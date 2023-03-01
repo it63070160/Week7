@@ -1,4 +1,0 @@
-{
-    "name": "veerawat",
-    "age": 21
-}
