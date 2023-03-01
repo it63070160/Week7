@@ -10,7 +10,7 @@ pipeline {
         stage('Welcome to master'){
             steps{
                 script {
-                    def props = readJSON file: "${env.WORKSPACE}\\params.json"
+                    def props = readFile "${env.WORKSPACE}/params.json"
                     echo '${props}'
                 }
                 echo 'Start Program'
