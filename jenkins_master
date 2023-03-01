@@ -5,7 +5,7 @@ pipeline {
         
         stage('Welcome to master'){
             steps{
-                echo 'Start Program'
+                echo 'Start Program 1'
                 script {
                     def envname = readJSON file: "${env.WORKSPACE}/params.json"
                     element1 = "${envname.name}"
