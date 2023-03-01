@@ -16,7 +16,7 @@ pipeline {
         stage('Read JSON file'){
             steps{
                 script{
-                    name = "${data.name}"
+                    name = "${env.data.name}"
                     echo name
                 }
             }
